@@ -1,77 +1,76 @@
-# Deployment and DevOps for MERN Applications
+# 🔄 Week 4: Deep Dive into MERN Stack Integration
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+## 🚀 Project Overview
+A full-stack blog application built with the MERN stack demonstrating:
+- RESTful API with Express & MongoDB Atlas
+- JWT-based user authentication
+- Full CRUD for blog posts and categories
+- Comment system
+- Responsive React frontend with Vite
 
-## Assignment Overview
+## 🛠️ Setup Instructions
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+### Prerequisites
+- Node.js v18+
+- MongoDB Atlas account
 
-## Getting Started
+### Installation
+1. Clone the repository
+2. **Backend**:
+   ```bash
+   cd server
+   npm install
+   cp .env.example .env  # Fill in MONGODB_URI and JWT_SECRET
+   npm run dev
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
 
-## Files Included
+   3. Frontend:
+       bash
+      cd client
+      npm install
+      npm run dev
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+      Environment Variables (server/.env)
+       env
+      MONGODB_URI=mongodb+srv://user:pass@cluster.xxxx.mongodb.net/mern-stack
+      JWT_SECRET=your_strong_random_secret_here
+      PORT=5000 
 
-## Requirements
+📡 API Endpoints
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+Auth
+POST /api/auth/register – { name, email, password }
+POST /api/auth/login – { email, password }
 
-## Deployment Platforms
+Posts
+GET /api/posts – Get all posts
+GET /api/posts/:slug – Get single post
+POST /api/posts – Create post (protected)
+PUT /api/posts/:id – Update post (protected)
+DELETE /api/posts/:id – Delete post (protected)
+POST /api/posts/:postId/comments – Add comment (protected)
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+Categories
+GET /api/categories
+POST /api/categories (protected)
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
 
-## CI/CD Pipeline
+✅ Features Implemented
+*Full MERN stack integration
+*MongoDB Atlas with IP whitelist (0.0.0.0/0 for dev)
+*JWT authentication with protected routes
+*Full CRUD operations
+*Comment system
+*Custom React hooks (usePosts)
+*Responsive UI with clean component architecture
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
 
-## Submission
+🖼️ Screenshots
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+![Homepage](screenshots/home.png)
+![Post Detail](screenshots/post-detail.png)
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
 
-## Resources
-
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+🌐 Live Demo
+- **Frontend**: [https://mern-stack-integration-alpha.vercel.app](https://mern-stack-integration-alpha.vercel.app)
+- **Backend**: [https://mern-stack-integration-jess-neemo-production.up.railway.app](https://mern-stack-integration-jess-neemo-production.up.railway.app)
