@@ -71,6 +71,16 @@ POST /api/categories (protected)
 ![Post Detail](screenshots/post-detail.png)
 
 
-🌐 Live Demo
-- **Frontend**: [https://mern-stack-integration-alpha.vercel.app](https://mern-stack-integration-alpha.vercel.app)
-- **Backend**: [https://mern-stack-integration-jess-neemo-production.up.railway.app](https://mern-stack-integration-jess-neemo-production.up.railway.app)
+## 🌐 Live Deployment
+
+- **Frontend (Vercel)**: [https://deployment-and-devops-essentials-eta.vercel.app](https://deployment-and-devops-essentials-eta.vercel.app)
+- **Backend (Railway)**: [https://deployment-and-devops-essentials-jess-neemo-production.up.railway.app](https://deployment-and-devops-essentials-jess-neemo-production.up.railway.app)
+
+
+## 🔧 DevOps Configuration
+
+- **Frontend**: Vercel auto-deploys from `main` branch (`client/` root)
+- **Backend**: Railway auto-deploys from `main` branch (`server/` root)
+- **Environment**: All secrets managed via platform environment variables
+- **Database**: MongoDB Atlas with `0.0.0.0/0` IP whitelist (per [Atlas Security Docs](https://www.mongodb.com/docs/atlas/security-whitelist/)) for Railway compatibility
+- **CI/CD**: Fully automated — push to GitHub → auto-build and deploy
